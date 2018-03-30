@@ -25,6 +25,25 @@ function login(req, res, next){
   });
 
   }
+  function register(req, res, next) {
+
+    models.user.build({
+      nickname : req.body.nickname,
+      name : req.body.name,
+      lastname : req.body.lastname,
+      phone : req.body.phone,
+      email : req.body.email,
+      password : req.body.password,
+      role_id : req.body.role_id
+      
+    }).save().then(() =>{
+    res.json({status : true, data : null});
+    }).catch(e =>{
+      console.log(e);
+      res.json({status : false, data : {message : e}});
+    });
+    
+  }
 module.exports = {
   list,
   login
