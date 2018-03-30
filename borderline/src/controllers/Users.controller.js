@@ -11,18 +11,17 @@ function list(req, res, next) {
     .catch(e => next(e));
 }
 function login(req, res, next){
-  models.user.findAll({
+  models.user.find({
     where : {
-      email : req.body.email,
-      password : req.body.password,
-      active : 1
+      nickname : req.body.nickname,
+      password : req.body.password
     }
   }).then((userL) =>{
-    var data = userL[0].dataValues;
+    var data = userL.dataValues;
     var theToken = jwt.sign({ user : data.id}, "sasasasa", {expiresIn: 24 * 60 * 60});
     res.json({token : theToken});
   }).catch((e)=>{
-    res.status(401).json({status : "Wrong credentials"});
+    res.status(200).json({status : false, "data": {'message' : 'Wrong credentials'}});
   });
 
   }
