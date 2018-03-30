@@ -1,28 +1,33 @@
 //import mysql from 'mysql';
 var jwt = require('jsonwebtoken');
-const Sequelize = require('sequelize');
-//var mysql = require('mysql');
-/*var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "borderline"
-});*/
-
-const sequelize = new Sequelize('postgres://marcus:123@localhost:5432/template1');
+import models from '../config/sequelize'
+import help from '../tools/email-helper'
 function list(req, res, next) {
-	// body...
-/*	con.connect(function(err) {
-	  if (err) throw err;
-	  con.query("SELECT * FROM users", function (err, result, fields) {
-	    if (err) throw err;
-	    res.json(result);
-	  });
-	});*/
-	res.json({status : 'ok'});
-	
+  models.user.findAll({})
+    .then((data) => {
+    	//help.helpMAil;
+      res.json(data);
+    })
+    .catch(e => next(e));
 }
+function login(req, res, next){
+  models.user.findAll({
+    where : {
+      email : req.body.email,
+      password : req.body.password,
+      active : 1
+    }
+  }).then((userL) =>{
+    var data = userL[0].dataValues;
+    var theToken = jwt.sign({ user : data.id}, "sasasasa", {expiresIn: 24 * 60 * 60});
+    res.json({token : theToken});
+  }).catch((e)=>{
+    res.status(401).json({status : "Wrong credentials"});
+  });
+
+  }
 module.exports = {
-  list
+  list,
+  login
 
 };

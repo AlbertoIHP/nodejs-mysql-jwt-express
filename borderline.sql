@@ -46,12 +46,13 @@ create table operation(
 	active boolean not null default true,
 	type int not null,
 	creator_op int not null,
-	user_op int not null
+	user_op int not null,
+	template_id int not null,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default current_timestamp on update current_timestamp,
 	foreign key (bank_id) references bank(id),
 	foreign key (creator_op) references user(id),
 	foreign key (user_op) references user(id),
-	foreign key (template_formula) references template(price_formula)
+	foreign key (template_id) references template(id)
 
 );

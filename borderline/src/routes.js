@@ -13,6 +13,6 @@ var userCtrl = require('./controllers/Users.controller.js');
 var express = require('express');
 var router = rout.Router();
 router.get('/users', userCtrl.list);
-
+router.post('/login', userCtrl.login);
 
 module.exports = router;
