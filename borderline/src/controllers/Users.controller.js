@@ -12,9 +12,10 @@ function list(req, res, next) {
     .catch(e => next(e));
 }
 function login(req, res, next){
+  console.log(req.body.email + " " + req.body.password);
   models.user.find({
     where : {
-      nickname : req.body.nickname,
+      email : req.body.email,
       password : req.body.password
     }
   }).then((userL) =>{
