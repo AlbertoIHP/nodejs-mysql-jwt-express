@@ -4,7 +4,7 @@ import Sequelize from 'sequelize';
 
 const target = path.join(__dirname, '../models');
 
-const sequelize = new Sequelize('borderline', 'root', 'root', {
+const sequelize = new Sequelize('template', 'root', '', {
   dialect: 'mysql',
   host: "localhost",
   port: 3306,
