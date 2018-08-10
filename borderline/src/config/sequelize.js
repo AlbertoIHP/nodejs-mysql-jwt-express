@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import Sequelize from 'sequelize';
-
+import config from './settings';
 const target = path.join(__dirname, '../models');
 
-const sequelize = new Sequelize('template', 'root', '', {
+const sequelize = new Sequelize(config.database.name, config.database.user, config.database.pass, {
+  logging: config.database.log,
   dialect: 'mysql',
   host: "localhost",
   port: 3306,
