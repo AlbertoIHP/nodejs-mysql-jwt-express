@@ -4,7 +4,9 @@ import api from '../tools/common'
 import config from '../config/settings'
 
 function list(req, res) {
-  models.users.findAll({})
+  models.users.findAll( {attributes: {
+    exclude: ['password']
+}})
     .then((data) => {
       api.ok(res, data);
     });

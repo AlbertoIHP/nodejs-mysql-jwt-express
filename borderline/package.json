@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon --exec babel-node --presets es2015 ./bin/www",
-    "test" : " mocha --require babel-core/register tests/ --exit",
-    "models" : "sequelize-auto -o /src/models -d template -h localhost -u root -p 3306  -e mysql"
+    "test": " mocha --require babel-core/register tests/ --exit",
+    "models": "sequelize-auto -o /src/models -d template -h localhost -u root -p 3306  -e mysql"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -28,9 +28,6 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.2",
     "nodemailer": "^4.6.2",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.28.6",
