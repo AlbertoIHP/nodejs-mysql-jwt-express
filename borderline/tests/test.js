@@ -1,9 +1,6 @@
-const chai = require("chai");
-const expect = chai.expect;
-const sinon = require("sinon");
-const userController = require('../src/controllers/Users.controller');
-let server = require('../bin/www');
-let httpServer = require('chai-http');
+import chai from  "chai";
+import  server from '../bin/www';
+import httpServer from 'chai-http';
 let should = chai.should();
 chai.use(httpServer);
 describe("UserController test", () => {
