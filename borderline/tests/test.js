@@ -8,7 +8,7 @@ let should = chai.should();
 chai.use(httpServer);
 describe("UserController test", () => {
     
-  it("testing all methods on the controller...", (done) => {
+  it("Testing all methods on the controller...", (done) => {
     let req = {
         body : {
             email : 'tomas@gmail.com',
