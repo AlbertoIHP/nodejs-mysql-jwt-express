@@ -6,4 +6,4 @@ This is a template for rapid backend development, with all boilerplate code alre
 - Express JS (Api REST)
 - JWT AUTH (Express middleware)
 - SequelizeJS & Sequelize-Auto (ORM & Model Generator from database)
-- Babel (ES6 support)
+- Babel (ES6 support) 
