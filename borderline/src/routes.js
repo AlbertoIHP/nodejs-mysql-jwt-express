@@ -10,5 +10,6 @@ import auth from "../src/auth/middleware"
 var router = express.Router();
 router.get('/users', auth.authorization, userCtrl.list);
 router.post('/login', userCtrl.login);
-
+router.get('/api/Datacard/Maquinas', userCtrl.machines);
+router.post('/api/Datacard/CargaArchivo', userCtrl.loadJob);
 module.exports = router;
