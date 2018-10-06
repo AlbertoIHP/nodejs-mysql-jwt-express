@@ -59,8 +59,11 @@ function profile(req, res, next) {
     });
 }
 function machines(req, res, next) {
-  var responseObject = [{Nombre : "1M185", Modelo : "Mx6000-", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0},
-  {Nombre : "u", Modelo : "Mx6000-", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0}];
+  var responseObject = [
+  {Nombre : "M185", Modelo : "Mx6000-1", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0},
+  {Nombre : "M111", Modelo : "Mx6000-1", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0},
+  {Nombre : "M772", Modelo : "Mx6000-1", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0},
+  {Nombre : "M175", Modelo : "Maxsys", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0}];
   res.json(responseObject);
 }
 function loadJob(req, res, next) {
