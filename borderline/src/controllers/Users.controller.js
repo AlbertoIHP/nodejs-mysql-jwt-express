@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import models from '../config/sequelize';
 import api from '../tools/common'
 import config from '../config/settings'
-
+var fs = require('fs');
 function list(req, res) {
   models.users.findAll({
     attributes: {
@@ -59,12 +59,9 @@ function profile(req, res, next) {
     });
 }
 function machines(req, res, next) {
-  var responseObject = [
-  {Nombre : "M185", Modelo : "Mx6000-1", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0},
-  {Nombre : "M111", Modelo : "Mx6000-1", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0},
-  {Nombre : "M772", Modelo : "Mx6000-1", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0},
-  {Nombre : "M175", Modelo : "Maxsys", NumeroDeSerie:"123456", Estado:"up", ContGrabOk:0, ContGrabError:0 ,ContSinGrabar:0}];
-  res.json(responseObject);
+  fs.readFile('./maquinas.txt', 'utf8', function(err, contents) {
+    res.json(JSON.parse(contents));
+  });
 }
 function loadJob(req, res, next) {
   var responseObject = req.body

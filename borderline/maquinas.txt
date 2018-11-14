@@ -1,0 +1,5 @@
+[
+  {"Nombre" : "M185", "Modelo" : "Mx6000-1", "NumeroDeSerie":"123456", "Estado":"up", "ContGrabOk":0, "ContGrabError":0 ,"ContSinGrabar":0},
+  {"Nombre" : "M111", "Modelo" : "Mx6000-1", "NumeroDeSerie":"123456", "Estado":"up", "ContGrabOk":0, "ContGrabError":0 ,"ContSinGrabar":0},
+  {"Nombre" : "M772", "Modelo" : "Mx6000-1", "NumeroDeSerie":"123456", "Estado":"up", "ContGrabOk":0, "ContGrabError":0 ,"ContSinGrabar":0},
+  {"Nombre" : "M175", "Modelo" : "Maxsys", "NumeroDeSerie":"123456", "Estado":"up", "ContGrabOk":0, "ContGrabError":0 ,"ContSinGrabar":0}]
